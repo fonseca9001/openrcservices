@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+command="node /fvtt/foundryvtt/resources/app/main.js"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_args="--dataPath=/fvtt/foundrydata"
+name="keko-fvtt"
+description="keko-fvtt"
+command_background="yes"
+output_log="/var/log/${RC_SVCNAME}.log"
+error_log="${output_log}"
+
+depend() {
+        use net
+        }
